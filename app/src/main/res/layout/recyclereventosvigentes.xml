@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="10dp"
+    android:layout_margin="20dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:id="@+id/cardViewEventCreated"
+    app:circularflow_radiusInDP="10dp"
+    app:cardCornerRadius="10dp"
+    android:checkable="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre del evento"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:id="@+id/nameOfEvent"
+            />
+        <TextView
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tarea a asignar"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:id="@+id/task"
+            />
+        <TextView
+            android:id="@+id/eventDate"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fecha"
+            android:contentDescription="Fecha DD/MM del evento"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            />
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:padding="10dp"
+            app:selectionRequired="false"
+            android:foregroundGravity="center">
+            <Button
+                style="?attr/materialButtonOutlinedStyle"
+                android:id="@+id/eventHoursInit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:enabled="false"
+                android:clickable="false"
+                android:contentDescription="Hora de inicio del evento"
+                android:text="HoraInicio"/>
+            <Button
+                style="?attr/materialButtonOutlinedStyle"
+                android:id="@+id/eventHoursFinish"
+                android:layout_gravity="center"
+                android:enabled="false"
+                android:clickable="false"
+                android:contentDescription="Hora de finalizacion del evento"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="HoraFin"/>
+            
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:baselineAligned="true"
+            android:textAlignment="center"
+            >
+            <TextView
+                android:layout_margin="10dp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Aceptado?"
+                android:textSize="20sp"
+                />
+            <TextView
+                android:id="@+id/eventStatus"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="No"
+                />
+        </LinearLayout>
+
+
+    </LinearLayout>
+    </androidx.cardview.widget.CardView>
