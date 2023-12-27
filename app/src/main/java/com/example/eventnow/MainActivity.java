@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             finish();
             return;
+
         }
         //todo verificar si es empleado o empresa   <--
         db.collection("Users").document(firebaseAuth.getCurrentUser().getUid()).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
@@ -48,5 +49,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-    }
+        }
+
+
 }

@@ -1,33 +1,185 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.cardview.widget.CardView
+        android:layout_centerInParent="true"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        app:cardElevation="2dp"
+        app:cardCornerRadius="10dp"
+        android:layout_marginTop="100dp"
+        android:layout_margin="10dp"
+        >
+<LinearLayout
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
+    android:orientation="vertical"
     tools:context=".creationEvent">
-
-    <com.google.android.material.appbar.AppBarLayout
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fitsSystemWindows="true">
-
-        <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize" />
-
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <include layout="@layout/content_creation_event" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
+        android:text="ASI?"
+        android:textStyle="bold"
+        android:background="#7D1A67"
+        android:textAlignment="center"
+        android:textSize="25sp"
+        />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textField"
+        style="@style/creacionEvento"
+        android:textAlignment="center"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_marginEnd="@dimen/fab_margin"
-        android:layout_marginBottom="16dp"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:hint="Nombre evento">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/toggleButton"
+        android:layout_width="match_parent"
+        android:layout_gravity="center|center_horizontal"
+        android:gravity="center|center_horizontal"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content">
+        <Button
+            style="?attr/materialButtonOutlinedStyle"
+            android:id="@+id/button1"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Fecha inicio"
+            android:textSize="15sp"
+            />
+        <Button
+            style="?attr/materialButtonOutlinedStyle"
+            android:id="@+id/HoraInicio"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Hora Inicio"
+            android:textSize="15sp"
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+            />
+    </com.google.android.material.button.MaterialButtonToggleGroup><com.google.android.material.button.MaterialButtonToggleGroup
+        android:id="@+id/toggleButtons"
+        android:layout_width="match_parent"
+        android:layout_gravity="center|center_horizontal"
+        android:gravity="center|center_horizontal"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content">
+        <Button
+            style="?attr/materialButtonOutlinedStyle"
+            android:id="@+id/fechaFin"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Fecha Fin"
+            android:textSize="15sp"
+            />
+        <Button
+            style="?attr/materialButtonOutlinedStyle"
+            android:id="@+id/HoraFin"
+            android:layout_width="150dp"
+            android:textSize="15sp"
+            android:layout_height="wrap_content"
+            android:text="Hora Fin"
+            />
+    </com.google.android.material.button.MaterialButtonToggleGroup>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/paga"
+        android:layout_width="250dp"
+        style="@style/creacionEvento"
+        app:prefixText="$"
+        android:hint="Paga">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:inputType="number"
+            android:textSize="20sp"
+            android:layout_height="wrap_content"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tarea"
+        android:layout_width="250dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        app:helperTextEnabled="true"
+        app:helperText="Que personal requeres"
+        android:layout_height="wrap_content"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox.Dense.ExposedDropdownMenu"
+        android:hint="Tarea">
+        <AutoCompleteTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:textSize="20sp"
+            app:simpleItems="@array/listadoTareas"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ubicacion"
+        style="@style/creacionEvento"
+        app:errorEnabled="true"
+        android:hint="direccion">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:textSize="20sp"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/contacto"
+        style="@style/creacionEvento"
+        app:helperTextEnabled="true"
+        app:errorEnabled="true"
+        app:helperText="Para que puedan contactarte"
+        android:hint="numero contacto">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:textSize="20sp"
+
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/notes"
+        style="@style/creacionEvento"
+        app:helperTextEnabled="true"
+        app:helperText="Notas que quieras adjuntar a la solicitud"
+        android:hint="Notas">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+</LinearLayout>
+    </androidx.cardview.widget.CardView>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/crear"
+        style="?attr/materialButtonOutlinedStyle"
+        app:elevation="20dp"
+        app:strokeWidth="2dp"
+        app:strokeColor="#7D1A67"
+        android:layout_width="300dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Crear"
+        android:layout_alignParentBottom="true"
+        />
+</RelativeLayout>

@@ -75,7 +75,7 @@ public class adapterEventosCreados extends RecyclerView.Adapter<adapterEventosCr
         holder.nameOfEvent.setText(eventos.get(position).getEvento());
         holder.eventDate.setText(eventos.get(position).getFecha());
         holder.eventHoursInit.setText(eventos.get(position).getHoraInicio());
-        holder.eventStatus.setText(eventos.get(position).getNombre());
+        holder.eventStatus.setText(eventos.get(position).isEstado()? "Aceptado":"Pendiente");
         holder.eventHoursFinish.setText(eventos.get(position).getHoraFinal());
         holder.task.setText(eventos.get(position).getTarea());
         //todo al tocar el carview abro un BootomSheetDialog con los datos del evento y mapa    <--

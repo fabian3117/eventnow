@@ -19,6 +19,7 @@
         tools:targetApi="31">
         <activity
             android:name=".creationEvent"
+            android:screenOrientation="portrait"
             android:exported="false"
             android:label="@string/title_activity_creation_event"
             android:theme="@style/Theme.EventNow" />
@@ -27,6 +28,7 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="false"
             android:label="@string/title_activity_visor_evento"
+            android:screenOrientation="portrait"
             android:theme="@style/Theme.EventNow.Fullscreen" />
         <activity
             android:name=".EmpresaMain"
@@ -38,6 +40,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"
+            android:screenOrientation="portrait"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

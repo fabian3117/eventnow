@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="listadoTareas" >
+        <item>Mozo</item>
+        <item>Bartender</item>
+        <item>Runner</item>
+        <item>Cocinero</item>
+        <item>Bachero</item>
+        <item>Limpieza</item>
+        <item>Barista</item>
+    </string-array>
+</resources>

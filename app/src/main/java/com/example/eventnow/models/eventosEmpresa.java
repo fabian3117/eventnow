@@ -2,10 +2,73 @@ package com.example.eventnow.models;
 
 import com.google.firebase.Timestamp;
 
+import java.util.ArrayList;
+
+//todo nombre y evento es lo mismo podria eliminarlo
+//todo añado el arraylist<String> para candidatos
 public class eventosEmpresa {
     //todo cambiar fecha a tipo date
-    String Evento,Fecha,Nombre,Ubicacion,HoraInicio,HoraFinal,Tarea,Tarifa;
+    String Evento,Fecha,Nombre,Ubicacion,HoraInicio,HoraFinal,Tarea,Tarifa,Nota,Contacto;
+    ArrayList<String> candidatos;
+
     Timestamp fechaInicio,fechaFinal;
+    double Latitud,Longitud;
+    //-->   Estado indica si lo acepto alguien o no <--
+    boolean estado;
+    String idEmpresa;
+    String UID_Tomado;  //-->   UID del usuario que tomo el evento   <--
+
+    public String getUID_Tomado() {
+        return UID_Tomado;
+    }
+
+    public void setUID_Tomado(String UID_Tomado) {
+        this.UID_Tomado = UID_Tomado;
+    }
+
+    public eventosEmpresa() {
+        Evento="";
+        Fecha="";
+        Nombre="";
+        Ubicacion="";
+        HoraInicio="";
+        HoraFinal="";
+        Tarea="";
+        Tarifa="";
+        Nota="";
+        Contacto="";
+        candidatos=new ArrayList<>();
+        fechaInicio=null;
+        fechaFinal=null;
+        Latitud=0;
+        Longitud=0;
+        estado=false;
+        idEmpresa="";
+    }
+
+    public ArrayList<String> getCandidatos() {
+        return candidatos;
+    }
+
+    public void setCandidatos(ArrayList<String> candidatos) {
+        this.candidatos = candidatos;
+    }
+
+    public String getNota() {
+        return Nota;
+    }
+
+    public void setNota(String nota) {
+        Nota = nota;
+    }
+
+    public String getContacto() {
+        return Contacto;
+    }
+
+    public void setContacto(String contacto) {
+        Contacto = contacto;
+    }
 
     public Timestamp getFechaInicio() {
         return fechaInicio;
@@ -23,10 +86,7 @@ public class eventosEmpresa {
         this.fechaFinal = fechaFinal;
     }
 
-    double Latitud,Longitud;
-    //-->   Estado indica si lo acepto alguien o no <--
-    boolean estado;
-    String idEmpresa;
+
 
     public String getIdEmpresa() {
         return idEmpresa;
