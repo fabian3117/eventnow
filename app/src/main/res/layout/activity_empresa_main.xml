@@ -24,9 +24,14 @@
             app:title="{Ubicacion}"></com.google.android.material.appbar.MaterialToolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
-
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/FragmentLayoutMain"
+    />
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/Saludo"
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
@@ -38,6 +43,7 @@
         android:id="@+id/recyclerViewEmpresaEventosVigentes"
         android:contentDescription="Eventos creados y vigentes. al clickear puede observarse si estan tomados o no"
         android:layout_width="match_parent"
+        android:visibility="gone"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,6 +51,7 @@
 
     </androidx.recyclerview.widget.RecyclerView>
 <LinearLayout
+    android:visibility="gone"
     android:id="@+id/linearCantidatos"
     android:layout_width="match_parent"
     app:layout_constraintEnd_toEndOf="parent"
@@ -63,6 +70,7 @@
         />
 
     <TextView
+        android:visibility="gone"
         android:id="@+id/textoCantidatos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -77,6 +85,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewEmpresaCandidatos"
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:contentDescription="Candidatos a los eventos creados por la empresa"

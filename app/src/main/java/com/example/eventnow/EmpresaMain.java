@@ -12,6 +12,7 @@ import com.example.eventnow.adapters.AdapterCandidatos;
 import com.example.eventnow.adapters.adapterEventosCreados;
 import com.example.eventnow.databinding.ActivityEmpresaMainBinding;
 import com.example.eventnow.databinding.ActivityLoginBinding;
+import com.example.eventnow.fragments.EmpresaMenuPrincipal;
 import com.example.eventnow.models.Users;
 import com.example.eventnow.models.eventosEmpresa;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -35,12 +36,17 @@ public class EmpresaMain extends AppCompatActivity {
     private @NonNull ActivityEmpresaMainBinding binding;
     adapterEventosCreados adapterEventosCreados=new adapterEventosCreados();
     AdapterCandidatos adapterCandidatos=new AdapterCandidatos();
+    EmpresaMenuPrincipal fragmentPrincipal;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding= ActivityEmpresaMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         firebaseAuth=FirebaseAuth.getInstance();
+        fragmentPrincipal=new EmpresaMenuPrincipal();
+        getSupportFragmentManager().beginTransaction().replace(R.id.FragmentLayoutMain,fragmentPrincipal).commit();
+
+        /*
         //todo modificar para poder filtrar por fechas u en caso contrario modificar el parametro estado para ver si finalizo el evento
         db.collection("Eventos").whereEqualTo("idEmpresa",firebaseAuth.getCurrentUser().getUid()).whereEqualTo("estado",false).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
@@ -87,6 +93,8 @@ public class EmpresaMain extends AppCompatActivity {
         binding.recyclerViewEmpresaCandidatos.setLayoutManager(new LinearLayoutManager(this));
         binding.recyclerViewEmpresaEventosVigentes.setLayoutManager(new LinearLayoutManager(this));
 
+
+         */
         binding.floatingActionButton.setOnClickListener(v->{
             //todo abrir activity para crear evento
             Intent intent=new Intent(this,creationEvent.class);
